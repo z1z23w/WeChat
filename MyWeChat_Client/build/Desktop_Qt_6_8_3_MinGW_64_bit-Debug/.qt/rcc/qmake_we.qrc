@@ -1,0 +1,6 @@
+<RCC>
+  <qresource prefix="/qt/qml/we">
+    <file alias="qmldir">D:/we/MyWeChat_Client/build/Desktop_Qt_6_8_3_MinGW_64_bit-Debug/we/qmldir</file>
+  </qresource>
+</RCC>
+

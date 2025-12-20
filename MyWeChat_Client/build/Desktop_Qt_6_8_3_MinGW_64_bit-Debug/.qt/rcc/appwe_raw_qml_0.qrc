@@ -1,0 +1,6 @@
+<RCC>
+  <qresource prefix="/qt/qml/we/">
+    <file alias="Main.qml">D:/we/MyWeChat_Client/Main.qml</file>
+  </qresource>
+</RCC>
+

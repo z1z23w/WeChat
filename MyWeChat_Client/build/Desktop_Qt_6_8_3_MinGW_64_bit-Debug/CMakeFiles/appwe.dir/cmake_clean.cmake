@@ -1,0 +1,43 @@
+file(REMOVE_RECURSE
+  ".qt/rcc/qrc_appwe_raw_qml_0.cpp"
+  ".qt/rcc/qrc_qmake_we.cpp"
+  ".rcc/qmlcache/appwe_Main_qml.cpp"
+  ".rcc/qmlcache/appwe_Main_qml.cpp.aotstats"
+  ".rcc/qmlcache/appwe_qmlcache_loader.cpp"
+  "CMakeFiles/appwe.dir/Main.cpp.obj"
+  "CMakeFiles/appwe.dir/Main.cpp.obj.d"
+  "CMakeFiles/appwe.dir/P2PClient.cpp.obj"
+  "CMakeFiles/appwe.dir/P2PClient.cpp.obj.d"
+  "CMakeFiles/appwe.dir/appwe_autogen/mocs_compilation.cpp.obj"
+  "CMakeFiles/appwe.dir/appwe_autogen/mocs_compilation.cpp.obj.d"
+  "CMakeFiles/appwe.dir/appwe_qmltyperegistrations.cpp.obj"
+  "CMakeFiles/appwe.dir/appwe_qmltyperegistrations.cpp.obj.d"
+  "CMakeFiles/appwe.dir/build/Desktop_Qt_6_8_3_MinGW_64_bit-Debug/.qt/rcc/qrc_appwe_raw_qml_0.cpp.obj"
+  "CMakeFiles/appwe.dir/build/Desktop_Qt_6_8_3_MinGW_64_bit-Debug/.qt/rcc/qrc_appwe_raw_qml_0.cpp.obj.d"
+  "CMakeFiles/appwe.dir/build/Desktop_Qt_6_8_3_MinGW_64_bit-Debug/.qt/rcc/qrc_qmake_we.cpp.obj"
+  "CMakeFiles/appwe.dir/build/Desktop_Qt_6_8_3_MinGW_64_bit-Debug/.qt/rcc/qrc_qmake_we.cpp.obj.d"
+  "CMakeFiles/appwe.dir/build/Desktop_Qt_6_8_3_MinGW_64_bit-Debug/.rcc/qmlcache/appwe_Main_qml.cpp.obj"
+  "CMakeFiles/appwe.dir/build/Desktop_Qt_6_8_3_MinGW_64_bit-Debug/.rcc/qmlcache/appwe_Main_qml.cpp.obj.d"
+  "CMakeFiles/appwe.dir/build/Desktop_Qt_6_8_3_MinGW_64_bit-Debug/.rcc/qmlcache/appwe_qmlcache_loader.cpp.obj"
+  "CMakeFiles/appwe.dir/build/Desktop_Qt_6_8_3_MinGW_64_bit-Debug/.rcc/qmlcache/appwe_qmlcache_loader.cpp.obj.d"
+  "CMakeFiles/appwe_autogen.dir/AutogenUsed.txt"
+  "CMakeFiles/appwe_autogen.dir/ParseCache.txt"
+  "appwe_autogen"
+  "appwe.exe"
+  "appwe.exe.manifest"
+  "appwe.pdb"
+  "appwe_autogen/mocs_compilation.cpp"
+  "appwe_autogen/timestamp"
+  "appwe_qmltyperegistrations.cpp"
+  "libappwe.dll.a"
+  "meta_types/appwe_json_file_list.txt"
+  "meta_types/appwe_json_file_list.txt.timestamp"
+  "meta_types/qt6appwe_debug_metatypes.json"
+  "meta_types/qt6appwe_debug_metatypes.json.gen"
+  "we/appwe.qmltypes"
+)
+
+# Per-language clean rules from dependency scanning.
+foreach(lang CXX)
+  include(CMakeFiles/appwe.dir/cmake_clean_${lang}.cmake OPTIONAL)
+endforeach()
