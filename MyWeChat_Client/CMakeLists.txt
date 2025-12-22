@@ -19,11 +19,12 @@ qt_add_qml_module(appwe
     QML_FILES SearchUserDialog.qml
     QML_FILES AddFriendConfirmDialog.qml
     QML_FILES SetRemarkDialog.qml
+    SOURCES AudioManager.h AudioManager.cpp
 )
 
 # 链接必要的库
 target_link_libraries(appwe
-    PRIVATE Qt6::Quick Qt6::Network Qt6::Multimedia Qt6::QuickControls2
+    PRIVATE Qt6::Quick Qt6::Network Qt6::Multimedia Qt6::QuickControls2 Qt6::Multimedia
 )
 
 include(GNUInstallDirs)
