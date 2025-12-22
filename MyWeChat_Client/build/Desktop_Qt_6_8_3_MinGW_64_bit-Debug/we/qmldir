@@ -1,5 +1,0 @@
-module we
-typeinfo appwe.qmltypes
-prefer :/qt/qml/we/
-Main 1.0 Main.qml
-

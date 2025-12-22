@@ -22,16 +22,24 @@ private slots:
 private:
     QTcpServer *m_server;
 
-    // 【核心数据结构】
-    // 1. 根据用户名找到 Socket (用于转发消息)
+    // 在线用户映射表
     QMap<QString, QTcpSocket*> m_onlineUsers;
-    // 2. 根据 Socket 找到用户名 (用于断开连接时清理)
     QMap<QTcpSocket*, QString> m_socketToUser;
 
     void sendJson(QTcpSocket *socket, const QJsonObject &obj);
-    void handleLogin(QTcpSocket *socket, const QJsonObject &obj);
-    void handleMessage(QTcpSocket *socket, const QJsonObject &obj);
-    void broadcastUserList(); // 广播好友列表给所有人
+
+    // --- 业务处理函数群 (Handler) ---
+    void handleRegister(QTcpSocket *socket, const QJsonObject &req);
+    void handleLogin(QTcpSocket *socket, const QJsonObject &req);
+    void handleMessage(QTcpSocket *socket, const QJsonObject &req);
+
+    // 好友 CRUD Handler
+    void handleSearchUser(QTcpSocket *socket, const QJsonObject &req);
+    void handleAddFriend(QTcpSocket *socket, const QJsonObject &req);
+    void handleDeleteFriend(QTcpSocket *socket, const QJsonObject &req);
+    void handleUpdateFriend(QTcpSocket *socket, const QJsonObject &req);
+
+    void sendFriendList(QTcpSocket *socket, int userId);
 };
 
 #endif // CHATSERVER_H

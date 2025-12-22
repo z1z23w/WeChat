@@ -14,7 +14,11 @@ qt_add_qml_module(appwe
     URI we
     VERSION 1.0
     QML_FILES Main.qml
-    SOURCES P2PClient.h P2PClient.cpp
+    SOURCES NetworkManager.h NetworkManager.cpp
+    SOURCES MessageStorage.h MessageStorage.cpp
+    QML_FILES SearchUserDialog.qml
+    QML_FILES AddFriendConfirmDialog.qml
+    QML_FILES SetRemarkDialog.qml
 )
 
 # 链接必要的库

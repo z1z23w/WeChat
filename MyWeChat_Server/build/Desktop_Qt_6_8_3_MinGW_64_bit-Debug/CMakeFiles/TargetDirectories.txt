@@ -1,5 +1,0 @@
-D:/we/MyWeChat_Server/build/Desktop_Qt_6_8_3_MinGW_64_bit-Debug/CMakeFiles/WeChatServer.dir
-D:/we/MyWeChat_Server/build/Desktop_Qt_6_8_3_MinGW_64_bit-Debug/CMakeFiles/edit_cache.dir
-D:/we/MyWeChat_Server/build/Desktop_Qt_6_8_3_MinGW_64_bit-Debug/CMakeFiles/rebuild_cache.dir
-D:/we/MyWeChat_Server/build/Desktop_Qt_6_8_3_MinGW_64_bit-Debug/CMakeFiles/WeChatServer_autogen_timestamp_deps.dir
-D:/we/MyWeChat_Server/build/Desktop_Qt_6_8_3_MinGW_64_bit-Debug/CMakeFiles/WeChatServer_autogen.dir

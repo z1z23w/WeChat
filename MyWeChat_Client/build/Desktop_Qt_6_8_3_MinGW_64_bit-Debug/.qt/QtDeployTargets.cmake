@@ -1,3 +1,0 @@
-set(__QT_DEPLOY_TARGET_appwe_FILE D:/we/MyWeChat_Client/build/Desktop_Qt_6_8_3_MinGW_64_bit-Debug/appwe.exe)
-set(__QT_DEPLOY_TARGET_appwe_TYPE EXECUTABLE)
-set(__QT_DEPLOY_TARGET_appwe_RUNTIME_DLLS D:/Qt/6.8.3/mingw_64/bin/Qt6Multimedia.dll;D:/Qt/6.8.3/mingw_64/bin/Qt6QuickControls2.dll;D:/Qt/6.8.3/mingw_64/bin/Qt6QuickTemplates2.dll;D:/Qt/6.8.3/mingw_64/bin/Qt6Quick.dll;D:/Qt/6.8.3/mingw_64/bin/Qt6QmlMeta.dll;D:/Qt/6.8.3/mingw_64/bin/Qt6QmlWorkerScript.dll;D:/Qt/6.8.3/mingw_64/bin/Qt6OpenGL.dll;D:/Qt/6.8.3/mingw_64/bin/Qt6Gui.dll;D:/Qt/6.8.3/mingw_64/bin/Qt6QmlModels.dll;D:/Qt/6.8.3/mingw_64/bin/Qt6Qml.dll;D:/Qt/6.8.3/mingw_64/bin/Qt6Network.dll;D:/Qt/6.8.3/mingw_64/bin/Qt6Core.dll)
