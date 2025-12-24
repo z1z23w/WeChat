@@ -3,7 +3,6 @@
 
 AudioManager::AudioManager(QObject *parent) : QObject(parent) {
     // 1. 配置音频格式 (模拟电话音质：8000Hz, 单声道, 16位)
-    // 这种格式数据量小，适合 TCP 传输
     m_format.setSampleRate(8000);
     m_format.setChannelCount(1);
     m_format.setSampleFormat(QAudioFormat::Int16);
@@ -31,7 +30,6 @@ void AudioManager::startRecording() {
     if (!m_source) return;
     qDebug() << "🎤 麦克风开启";
 
-    // start() 返回一个 IO 设备，当里面有数据时会触发 readyRead
     m_inputDevice = m_source->start();
     connect(m_inputDevice, &QIODevice::readyRead, this, &AudioManager::onMicReadyRead);
 }
@@ -54,19 +52,17 @@ void AudioManager::onMicReadyRead() {
     QByteArray data = m_inputDevice->readAll();
 
     if (!data.isEmpty()) {
-        // 【新增日志】看看到底有没有读到数据，数据有多大
         qDebug() << "🎤 [AudioManager] 采集到音频数据，大小:" << data.size() << "字节";
 
         emit audioDataReady(data);
     } else {
-        // 【新增日志】
         qDebug() << "⚠️ [AudioManager] 麦克风有信号，但数据为空";
     }
 }
 
 void AudioManager::playAudioChunk(const QByteArray &data) {
     if (m_outputDevice && m_sink) {
-        // 写入扬声器，Qt 会自动播放
+        // 写入扬声器
         m_outputDevice->write(data);
     }
 }

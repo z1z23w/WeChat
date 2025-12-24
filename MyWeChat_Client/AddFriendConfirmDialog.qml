@@ -22,6 +22,5 @@ Dialog {
 
     onAccepted: {
         root.confirmAdded(root.targetUser)
-        // 注意：Dialog.Yes 默认会触发 accepted，不需要手动 close，除非你覆盖了 standardButtons 的行为
     }
 }

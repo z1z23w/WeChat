@@ -10,7 +10,6 @@ Dialog {
     modal: true
     standardButtons: Dialog.Cancel
 
-    // 定义一个信号，把输入的文字传出去
     signal searchTriggered(string keyword)
 
     ColumnLayout {

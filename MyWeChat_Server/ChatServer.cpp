@@ -113,7 +113,6 @@ void ChatServer::handleSearchUser(QTcpSocket *socket, const QJsonObject &req) {
     sendJson(socket, resp);
 }
 
-// ChatServer.cpp
 
 void ChatServer::handleAddFriend(QTcpSocket *socket, const QJsonObject &req) {
     int myId = req.value("user_id").toInt();
@@ -123,7 +122,7 @@ void ChatServer::handleAddFriend(QTcpSocket *socket, const QJsonObject &req) {
     // 1. 执行双向添加
     bool ok = DBManager::instance().addFriend(myId, friendName);
 
-    // 2. 回复给“发起者” (我)
+    // 2. 回复给“发起者”
     QJsonObject resp;
     resp["type"] = "op_resp";
     resp["op"] = "add";
@@ -135,8 +134,6 @@ void ChatServer::handleAddFriend(QTcpSocket *socket, const QJsonObject &req) {
         // 3. 刷新“我”的好友列表
         sendFriendList(socket, myId);
 
-        // 4. 【关键新增】如果“对方”在线，也立刻刷新“对方”的好友列表
-        // 这样对方不需要重启，立刻就能看到我出现在他的列表里
         if (m_onlineUsers.contains(friendName)) {
             QTcpSocket* friendSocket = m_onlineUsers[friendName];
 

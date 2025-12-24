@@ -54,7 +54,6 @@ ApplicationWindow {
         }
     }
 
-    // --- 组件化弹窗引用 (如果没有拆分文件，可以直接在下面定义) ---
     SearchUserDialog {
         id: searchDialog
         onSearchTriggered: (keyword) => client.searchUser(keyword)

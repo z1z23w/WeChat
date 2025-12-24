@@ -15,9 +15,6 @@ DBManager& DBManager::instance() {
 bool DBManager::connectToDb() {
     m_db = QSqlDatabase::addDatabase("QSQLITE");
 
-    // 【修正路径】
-    // 1. 加了斜杠 "/"
-    // 2. 使用 cleanPath 自动把 "D:/.../build/debug/../../../wechat.db" 解析成 "D:/.../wechat.db"
     QString dbPath = QDir::cleanPath(QCoreApplication::applicationDirPath() + "/../../../wechat.db");
 
     m_db.setDatabaseName(dbPath);
@@ -108,12 +105,10 @@ void DBManager::updateUserStatus(int userId, bool isOnline, QString ip, int port
     query.exec();
 }
 
-// --- 好友 CRUD 实现 ---
 
 QJsonArray DBManager::getFriendList(int userId) {
     QJsonArray list;
     QSqlQuery query;
-    // 联表查询：同时查出好友的 原名(username) 和 备注(remark)
     query.prepare("SELECT u.username, f.remark FROM users u "
                   "INNER JOIN friends f ON u.id = f.friend_id "
                   "WHERE f.user_id = :uid");
@@ -140,7 +135,7 @@ bool DBManager::addFriend(int userId, const QString &friendName) {
     if (friendId == -1 || friendId == userId) return false;
 
     QSqlQuery query;
-    m_db.transaction(); // 开启事务，保证两条插入要么都成功，要么都失败
+    m_db.transaction(); // 开启事务
 
     // 2. 插入 A -> B
     query.prepare("INSERT OR IGNORE INTO friends (user_id, friend_id) VALUES (:u, :f)");
@@ -148,17 +143,17 @@ bool DBManager::addFriend(int userId, const QString &friendName) {
     query.bindValue(":f", friendId);
     bool ok1 = query.exec();
 
-    // 3. 【关键新增】插入 B -> A (实现互为好友)
+    // 3. 插入 B -> A (实现互为好友)
     query.prepare("INSERT OR IGNORE INTO friends (user_id, friend_id) VALUES (:u, :f)");
     query.bindValue(":u", friendId); // 注意这里反过来了
     query.bindValue(":f", userId);
     bool ok2 = query.exec();
 
     if (ok1 && ok2) {
-        m_db.commit(); // 提交事务
+        m_db.commit();
         return true;
     } else {
-        m_db.rollback(); // 只要有一个失败，就全部回滚
+        m_db.rollback();
         return false;
     }
 }

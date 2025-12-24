@@ -24,7 +24,6 @@ public:
     void playAudioChunk(const QByteArray &data);
 
 signals:
-    // 录到数据了，发出去让别人处理
     void audioDataReady(QByteArray data);
 
 private slots:

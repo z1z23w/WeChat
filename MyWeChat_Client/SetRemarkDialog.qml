@@ -12,7 +12,6 @@ Dialog {
 
     property string targetUser: ""
 
-    // 信号：谁，改成了什么
     signal remarkConfirmed(string user, string remark)
 
     TextField {
@@ -21,7 +20,6 @@ Dialog {
         Layout.fillWidth: true
     }
 
-    // 每次打开弹窗时，清空输入框或者填入旧备注（这里先清空）
     onOpened: rInput.text = ""
 
     onAccepted: {

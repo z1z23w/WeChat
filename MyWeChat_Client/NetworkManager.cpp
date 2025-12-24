@@ -6,9 +6,8 @@ NetworkManager::NetworkManager(QObject *parent) : QObject(parent) {
     m_socket = new QTcpSocket(this);
     m_storage = new MessageStorage(this);
 
-    // 【初始化音频模块】
     m_audio = new AudioManager(this);
-    // 连接信号：音频模块录到数据了 -> NetworkManager 负责发出去
+    // 连接信号
     connect(m_audio, &AudioManager::audioDataReady, this, &NetworkManager::onAudioReady);
 
     // TCP 信号连接
@@ -20,7 +19,6 @@ NetworkManager::NetworkManager(QObject *parent) : QObject(parent) {
 // --- 语音核心逻辑 ---
 
 void NetworkManager::startVoice(QString targetUser) {
-    // 【新增日志】检查目标用户是否传进来了
     qDebug() << "👉 [NetworkManager] 按下按钮，目标用户:" << targetUser;
 
     m_currentVoiceTarget = targetUser;
@@ -33,7 +31,6 @@ void NetworkManager::startVoice(QString targetUser) {
 }
 
 void NetworkManager::onAudioReady(QByteArray data) {
-    // 【新增日志】检查是否因为没有目标而被拦截
     if (m_currentVoiceTarget.isEmpty()) {
         qDebug() << "⛔ [NetworkManager] 拦截：没有发送目标，丢弃语音数据";
         return;
@@ -41,7 +38,6 @@ void NetworkManager::onAudioReady(QByteArray data) {
 
     QString base64Str = QString::fromLatin1(data.toBase64());
 
-    // 【新增日志】准备发送
     qDebug() << "🚀 [NetworkManager] 正在发送语音包 ->" << m_currentVoiceTarget << "大小:" << base64Str.size();
 
     QJsonObject obj;
@@ -82,7 +78,7 @@ void NetworkManager::handleData(const QByteArray &data) {
 
         emit messageReceived(fromUser, content, false);
     }
-    // 2. 【新增】语音消息处理
+    // 2.语音消息处理
     else if (type == "voice") {
         QString content = obj.value("content").toString();
 
@@ -112,7 +108,6 @@ void NetworkManager::handleData(const QByteArray &data) {
     else if (type == "op_resp") emit operationResult(obj.value("op").toString(), obj.value("success").toBool(), obj.value("message").toString());
 }
 
-// --- 标准网络函数 ---
 
 void NetworkManager::connectToServer(QString ip) {
     if (m_socket->state() == QAbstractSocket::ConnectedState && m_socket->peerAddress().toString() == ip) return;
@@ -135,8 +130,6 @@ void NetworkManager::onError(QAbstractSocket::SocketError) {
 
 // --- 业务辅助函数 ---
 
-// NetworkManager.cpp
-
 void NetworkManager::refreshFriendList() {
     QJsonArray finalArray;
 
@@ -145,15 +138,14 @@ void NetworkManager::refreshFriendList() {
         QJsonObject friendObj = item.toObject();
         QString username = friendObj.value("username").toString();
 
-        // 【核心】去 Storage 查一下有没有未读，然后塞到 JSON 里
         bool hasUnread = m_storage->hasUnread(username);
-        friendObj["unread"] = hasUnread; // <--- 这行代码决定了红点亮不亮
+        friendObj["unread"] = hasUnread;
 
         finalArray.append(friendObj);
     }
 
     m_friendList = finalArray;
-    emit friendListChanged(); // 通知 QML 刷新
+    emit friendListChanged(); // QML 刷新
 }
 
 void NetworkManager::sendMessage(QString toUser, QString content) {

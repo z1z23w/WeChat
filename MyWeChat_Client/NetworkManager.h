@@ -34,7 +34,7 @@ public:
     Q_INVOKABLE QJsonArray getChatHistory(QString friendName);
     Q_INVOKABLE void clearUnread(QString friendName);
 
-    // 【新增】语音接口
+    // 语音接口
     Q_INVOKABLE void startVoice(QString targetUser); // 按下
     Q_INVOKABLE void stopVoice();                    // 松开
 
@@ -56,16 +56,15 @@ private slots:
     void onConnected();
     void onError(QAbstractSocket::SocketError socketError);
 
-    // 【新增】处理音频数据
+    // 处理音频数据
     void onAudioReady(QByteArray data);
 
 private:
     QTcpSocket *m_socket;
     MessageStorage *m_storage;
 
-    // 【组合模式：持有音频对象】
     AudioManager *m_audio;
-    QString m_currentVoiceTarget; // 记录语音发给谁
+    QString m_currentVoiceTarget; // 记录语音
 
     bool m_isLoggedIn = false;
     int m_myUserId = -1;

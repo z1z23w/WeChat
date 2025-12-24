@@ -19,8 +19,7 @@ public:
     int getUserId(const QString &username);
     QString getUsername(int userId);
 
-    // --- 好友管理相关 (增删改查) ---
-    // 查：获取好友列表 (包含备注)
+    // 查：获取好友列表
     QJsonArray getFriendList(int userId);
     // 增：添加好友
     bool addFriend(int userId, const QString &friendName);
@@ -28,7 +27,7 @@ public:
     bool deleteFriend(int userId, const QString &friendName);
     // 改：修改好友备注
     bool updateFriendRemark(int userId, const QString &friendName, const QString &remark);
-    // 搜：搜索用户 (用于添加好友前检查)
+    // 搜：搜索用户
     bool searchUser(const QString &keyword, QJsonObject &result);
 
     // 更新状态

@@ -12,14 +12,14 @@ class MessageStorage : public QObject
 public:
     explicit MessageStorage(QObject *parent = nullptr);
 
-    // 【存】存入一条新消息
-    // friendName: 对方的名字 (无论是谁发的，只要是在和他的聊天中，key都是他的名字)
+    // 存入一条新消息
+    // friendName: 对方的名字
     void addMessage(const QString &friendName, const QJsonObject &msgObj);
 
-    // 【取】获取和某人的所有历史记录
+    // 获取和某人的所有历史记录
     QJsonArray getHistory(const QString &friendName);
 
-    // 【未读管理】设置/查询/清除
+    // 设置/查询/清除
     void setUnread(const QString &friendName, bool hasUnread);
     bool hasUnread(const QString &friendName);
 

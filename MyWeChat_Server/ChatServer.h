@@ -28,7 +28,7 @@ private:
 
     void sendJson(QTcpSocket *socket, const QJsonObject &obj);
 
-    // --- 业务处理函数群 (Handler) ---
+    // 业务处理函数
     void handleRegister(QTcpSocket *socket, const QJsonObject &req);
     void handleLogin(QTcpSocket *socket, const QJsonObject &req);
     void handleMessage(QTcpSocket *socket, const QJsonObject &req);
