@@ -1,18 +1,25 @@
 #include <QGuiApplication>
 #include <QQmlApplicationEngine>
-#include "NetworkManager.h" // 引用新头文件
+#include "CommunicationController.h"
+
+// 【修复点1】引用 StringLiterals 命名空间
+using namespace Qt::StringLiterals;
 
 int main(int argc, char *argv[])
 {
     QGuiApplication app(argc, argv);
 
-    qmlRegisterType<NetworkManager>("we", 1, 0, "NetworkManager");
+    qmlRegisterType<CommunicationController>("we", 1, 0, "CommunicationController");
 
     QQmlApplicationEngine engine;
+
+    // 【修复点2】把 _qs 改成 _s
+    const QUrl url(u"qrc:/we/NetizenChatUI.qml"_s);
+
     QObject::connect(&engine, &QQmlApplicationEngine::objectCreationFailed,
                      &app, []() { QCoreApplication::exit(-1); },
                      Qt::QueuedConnection);
-    engine.loadFromModule("we", "Main");
+    engine.load(url);
 
     return app.exec();
 }
