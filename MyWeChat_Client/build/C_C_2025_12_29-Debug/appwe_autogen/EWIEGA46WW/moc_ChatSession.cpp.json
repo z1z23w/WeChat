@@ -1,0 +1,45 @@
+{
+    "classes": [
+        {
+            "className": "ChatSession",
+            "lineNumber": 5,
+            "object": true,
+            "properties": [
+                {
+                    "constant": false,
+                    "designable": true,
+                    "final": false,
+                    "index": 0,
+                    "lineNumber": 7,
+                    "name": "currentTarget",
+                    "notify": "targetChanged",
+                    "read": "currentTarget",
+                    "required": false,
+                    "scriptable": true,
+                    "stored": true,
+                    "type": "QString",
+                    "user": false,
+                    "write": "setCurrentTarget"
+                }
+            ],
+            "qualifiedClassName": "ChatSession",
+            "signals": [
+                {
+                    "access": "public",
+                    "index": 0,
+                    "lineNumber": 15,
+                    "name": "targetChanged",
+                    "returnType": "void"
+                }
+            ],
+            "superClasses": [
+                {
+                    "access": "public",
+                    "name": "QObject"
+                }
+            ]
+        }
+    ],
+    "inputFile": "ChatSession.h",
+    "outputRevision": 69
+}

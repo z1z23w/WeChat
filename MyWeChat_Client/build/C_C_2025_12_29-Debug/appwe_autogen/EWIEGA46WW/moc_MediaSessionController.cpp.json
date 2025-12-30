@@ -1,0 +1,48 @@
+{
+    "classes": [
+        {
+            "className": "MediaSessionController",
+            "lineNumber": 7,
+            "object": true,
+            "qualifiedClassName": "MediaSessionController",
+            "signals": [
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "data",
+                            "type": "QByteArray"
+                        }
+                    ],
+                    "index": 0,
+                    "lineNumber": 21,
+                    "name": "mediaStreamGenerated",
+                    "returnType": "void"
+                }
+            ],
+            "slots": [
+                {
+                    "access": "private",
+                    "arguments": [
+                        {
+                            "name": "data",
+                            "type": "QByteArray"
+                        }
+                    ],
+                    "index": 1,
+                    "lineNumber": 24,
+                    "name": "onAudioData",
+                    "returnType": "void"
+                }
+            ],
+            "superClasses": [
+                {
+                    "access": "public",
+                    "name": "QObject"
+                }
+            ]
+        }
+    ],
+    "inputFile": "MediaSessionController.h",
+    "outputRevision": 69
+}

@@ -1,0 +1,10 @@
+# ninja log v6
+1	145	1766995079369618665	WeChatServer_autogen/timestamp	d4d9ce6b5be8390
+1	145	1766995079369618665	WeChatServer_autogen/mocs_compilation.cpp	d4d9ce6b5be8390
+1	145	1766995079369618665	/root/program/WeChat/MyWeChat_Server/build/C_C_2025_12_29-Debug/WeChatServer_autogen/timestamp	d4d9ce6b5be8390
+1	145	1766995079369618665	/root/program/WeChat/MyWeChat_Server/build/C_C_2025_12_29-Debug/WeChatServer_autogen/mocs_compilation.cpp	d4d9ce6b5be8390
+146	1256	1766995079377618649	CMakeFiles/WeChatServer.dir/WeChatServer_autogen/mocs_compilation.cpp.o	78e41551be26fd51
+146	1281	1766995079378641681	CMakeFiles/WeChatServer.dir/main.cpp.o	c0ea9d3007a73184
+146	1540	1766995079378980834	CMakeFiles/WeChatServer.dir/DBManager.cpp.o	e4ec95eeab2ce44f
+146	1598	1766995079378817038	CMakeFiles/WeChatServer.dir/ChatServer.cpp.o	1954241b504455db
+1598	1715	1766995080829615735	WeChatServer	4ff621e45937f025

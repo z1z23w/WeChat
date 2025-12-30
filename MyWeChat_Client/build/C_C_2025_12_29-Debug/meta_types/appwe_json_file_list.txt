@@ -1,0 +1,6 @@
+/root/program/WeChat/MyWeChat_Client/build/C_C_2025_12_29-Debug/appwe_autogen/include/../EWIEGA46WW/moc_AudioManager.cpp.json
+/root/program/WeChat/MyWeChat_Client/build/C_C_2025_12_29-Debug/appwe_autogen/include/../EWIEGA46WW/moc_ChatSession.cpp.json
+/root/program/WeChat/MyWeChat_Client/build/C_C_2025_12_29-Debug/appwe_autogen/include/../EWIEGA46WW/moc_CommunicationController.cpp.json
+/root/program/WeChat/MyWeChat_Client/build/C_C_2025_12_29-Debug/appwe_autogen/include/../EWIEGA46WW/moc_ComplianceController.cpp.json
+/root/program/WeChat/MyWeChat_Client/build/C_C_2025_12_29-Debug/appwe_autogen/include/../EWIEGA46WW/moc_MediaSessionController.cpp.json
+/root/program/WeChat/MyWeChat_Client/build/C_C_2025_12_29-Debug/appwe_autogen/include/../EWIEGA46WW/moc_Netizen.cpp.json

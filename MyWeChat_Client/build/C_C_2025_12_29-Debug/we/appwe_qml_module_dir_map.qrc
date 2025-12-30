@@ -1,0 +1,6 @@
+<RCC>
+  <qresource prefix="/">
+    <file alias="/we">/root/program/WeChat/MyWeChat_Client/build/C_C_2025_12_29-Debug/we</file>
+
+  </qresource>
+</RCC>

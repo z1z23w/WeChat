@@ -1,0 +1,2 @@
+set(__QT_DEPLOY_TARGET_WeChatServer_FILE /root/program/WeChat/MyWeChat_Server/build/C_C_2025_12_29-Debug/WeChatServer)
+set(__QT_DEPLOY_TARGET_WeChatServer_TYPE EXECUTABLE)

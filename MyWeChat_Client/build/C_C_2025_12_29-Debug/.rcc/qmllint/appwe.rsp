@@ -1,0 +1,11 @@
+--bare
+-I
+/root/program/WeChat/MyWeChat_Client/build/C_C_2025_12_29-Debug
+-I
+/opt/Qt/6.10.0/gcc_64/qml
+--resource
+/root/program/WeChat/MyWeChat_Client/build/C_C_2025_12_29-Debug/.qt/rcc/qmake_we.qrc
+--resource
+/root/program/WeChat/MyWeChat_Client/build/C_C_2025_12_29-Debug/.qt/rcc/appwe_raw_qml_0.qrc
+/root/program/WeChat/MyWeChat_Client/NetizenChatUI.qml
+/root/program/WeChat/MyWeChat_Client/NotificationPanel.qml

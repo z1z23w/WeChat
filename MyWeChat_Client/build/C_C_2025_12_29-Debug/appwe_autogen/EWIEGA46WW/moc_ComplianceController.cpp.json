@@ -1,0 +1,18 @@
+{
+    "classes": [
+        {
+            "className": "ComplianceController",
+            "lineNumber": 6,
+            "object": true,
+            "qualifiedClassName": "ComplianceController",
+            "superClasses": [
+                {
+                    "access": "public",
+                    "name": "QObject"
+                }
+            ]
+        }
+    ],
+    "inputFile": "ComplianceController.h",
+    "outputRevision": 69
+}

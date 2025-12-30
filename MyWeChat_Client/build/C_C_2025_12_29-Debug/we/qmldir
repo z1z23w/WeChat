@@ -1,0 +1,7 @@
+module we
+typeinfo appwe.qmltypes
+prefer :/we/
+NetizenChatUI 1.0 NetizenChatUI.qml
+NotificationPanel 1.0 NotificationPanel.qml
+depends QtQuick
+

@@ -1,0 +1,42 @@
+{
+    "classes": [
+        {
+            "className": "AudioManager",
+            "lineNumber": 12,
+            "object": true,
+            "qualifiedClassName": "AudioManager",
+            "signals": [
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "data",
+                            "type": "QByteArray"
+                        }
+                    ],
+                    "index": 0,
+                    "lineNumber": 27,
+                    "name": "audioDataReady",
+                    "returnType": "void"
+                }
+            ],
+            "slots": [
+                {
+                    "access": "private",
+                    "index": 1,
+                    "lineNumber": 30,
+                    "name": "onMicReadyRead",
+                    "returnType": "void"
+                }
+            ],
+            "superClasses": [
+                {
+                    "access": "public",
+                    "name": "QObject"
+                }
+            ]
+        }
+    ],
+    "inputFile": "AudioManager.h",
+    "outputRevision": 69
+}

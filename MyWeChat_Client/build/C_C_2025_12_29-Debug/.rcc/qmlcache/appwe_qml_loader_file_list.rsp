@@ -1,0 +1,6 @@
+--resource
+/root/program/WeChat/MyWeChat_Client/build/C_C_2025_12_29-Debug/.qt/rcc/qmake_we.qrc
+--resource
+/root/program/WeChat/MyWeChat_Client/build/C_C_2025_12_29-Debug/.qt/rcc/appwe_raw_qml_0.qrc
+/we/NetizenChatUI.qml
+/we/NotificationPanel.qml
